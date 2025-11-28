@@ -1,34 +1,93 @@
+/* --- GLOBAL --- */
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6ff;
-  color: #1a1a1a;
-  padding: 30px;
-  max-width: 600px;
-  margin: auto;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #0f0f1a;
+  color: white;
 }
 
-h1 {
-  color: #3b5bff;
+h1, h2, p { margin: 0; }
+
+/* --- HERO SECTION --- */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background: radial-gradient(circle, #1a1a2e 10%, #0f0f1a 80%);
 }
 
-#text {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.title {
+  font-size: 4rem;
+  letter-spacing: 5px;
+  font-weight: 800;
 }
 
-button {
+.glow {
+  text-shadow: 0 0 20px #6c63ff, 0 0 40px #6c63ff;
+}
+
+.subtitle {
   margin-top: 15px;
-  padding: 10px 15px;
-  background: #3b5bff;
+  font-size: 1.3rem;
+  color: #cfcfff;
+  max-width: 600px;
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: #6c63ff;
   color: white;
   border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
+  transition: 0.3s;
 }
 
-button:hover {
-  background: #213aff;
+.btn:hover {
+  background: #483eff;
+  box-shadow: 0 0 20px #6c63ff;
 }
+
+/* --- CONTENT SECTIONS --- */
+.section {
+  padding: 70px 30px;
+  text-align: center;
+  background: #161624;
+}
+
+.section.dark {
+  background: #0d0d16;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section-text {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.glow-small {
+  text-shadow: 0 0 10px #6c63ff;
+}
+
+/* --- FOOTER --- */
+footer {
+  padding: 20px;
+  background: #090912;
+  text-align: center;
+  font-size: 1rem;
+  color: #aaa;
+}
+
