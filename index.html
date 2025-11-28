@@ -1,5 +1,4 @@
 <!doctype html>
-<br>
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -12,7 +11,7 @@
   <header class="hero">
     <h1 class="title glow">STOP HATE</h1>
     <p class="subtitle">Niemand verdient es, gemobbt oder schlecht behandelt zu werden.</p>
-    <button class="btn" onclick="scrollToSection()">Mehr erfahren</button>
+    <button class="btn" onclick="scrollToSection('#info')">Mehr erfahren</button>
   </header>
 
   <section id="info" class="section">
@@ -23,21 +22,79 @@
     </p>
   </section>
 
-  <section class="section dark">
-    <h2 class="section-title glow-small">Meine Botschaft</h2>
+  <!-- NEUER BEREICH: Persönliche Erfahrung / Vorfall -->
+  <section id="testimony" class="section accent">
+    <div class="card">
+      <h2 class="section-title small">Meine Erfahrung</h2>
+      <p class="section-text">
+        Es ist nicht fair, dass <strong>Max</strong> mich getreten und geschlagen hat. 
+        Körperliche Gewalt ist niemals akzeptabel. Diese Seite sammelt Informationen, bietet Unterstützung und zeigt Wege, wie man sich wehren oder Hilfe holen kann.
+      </p>
+
+      <ul class="support-list">
+        <li><strong>Dokumentiere</strong> Datum, Uhrzeit und Beweise (Screenshots, Zeug*innen, Videos).</li>
+        <li><strong>Melde</strong> den Vorfall an die Plattformmoderation oder bei Bedarf an die Polizei.</li>
+        <li><strong>Sprich</strong> mit Vertrauenspersonen oder Beratungsstellen – du bist nicht allein.</li>
+      </ul>
+
+      <div class="actions">
+        <button class="btn-outline" onclick="openReportModal()">Vorfall melden</button>
+        <button class="btn" onclick="scrollToSection('#help')">Hilfe & Ressourcen</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="help" class="section dark">
+    <h2 class="section-title glow-small">Hilfe & Ressourcen</h2>
     <p class="section-text">
-      Ich stehe gegen Mobbing.  
-      Gegen Hate.  
-      Für Respekt.  
-      Für Stärke.  
-      Für Zusammenhalt.
+      Wenn du körperlich angegriffen wurdest, suche sofort sichere Hilfe. Bei akuter Gefahr rufe die Notrufnummern.
+      Für Online-Mobbing nutze die Meldefunktionen der Plattform und sichere Beweise.
     </p>
+
+    <div class="resource-grid">
+      <div class="resource">
+        <h3>Sichern</h3>
+        <p>Screenshots, Chatlogs, Zeug*innen notieren.</p>
+      </div>
+      <div class="resource">
+        <h3>Melden</h3>
+        <p>Plattform-Support oder, bei körperlicher Gewalt, die Polizei informieren.</p>
+      </div>
+      <div class="resource">
+        <h3>Reden</h3>
+        <p>Vertraute, Vertrauenspersonen, Beratungsstellen kontaktieren.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>Gemeinsam sind wir stärker. ❤️</p>
+    <p>Gemeinsam sind wir stärker. ❤️ — Stop Hate</p>
   </footer>
+
+  <!-- Modal für Meldung -->
+  <div id="reportModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeReportModal()">✕</button>
+      <h3>Vorfall melden</h3>
+      <p>Fülle die Felder aus, sichere Beweise und kontaktiere die zuständige Stelle.</p>
+
+      <label for="repName">Dein Name (oder Anonym)</label>
+      <input id="repName" class="field" placeholder="Name / Anonym">
+
+      <label for="repDate">Datum</label>
+      <input id="repDate" type="date" class="field">
+
+      <label for="repDesc">Kurze Schilderung</label>
+      <textarea id="repDesc" class="field" placeholder="Was ist passiert?"></textarea>
+
+      <div style="display:flex; gap:8px; margin-top:12px;">
+        <button class="btn" onclick="submitReport()">Report absenden (als Text kopieren)</button>
+        <button class="btn-outline" onclick="closeReportModal()">Abbrechen</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
