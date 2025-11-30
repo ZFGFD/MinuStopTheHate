@@ -1,100 +1,112 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Stop Hate – Stand Strong</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stop Hate – Stand Strong</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="hero">
-    <h1 class="title glow">STOP HATE</h1>
-    <p class="subtitle">Niemand verdient es, gemobbt oder schlecht behandelt zu werden.</p>
-    <button class="btn" onclick="scrollToSection('#info')">Mehr erfahren</button>
-  </header>
+<header class="hero">
+  <h1 class="title glow">STOP HATE</h1>
+  <p class="subtitle large">
+    Niemand sollte Angst haben, gemobbt, bedroht oder verletzt zu werden. Respekt beginnt bei uns allen.
+  </p>
+  <button class="btn btn-wave" onclick="scrollToSection('#info')">Mehr erfahren</button>
+</header>
 
-  <section id="info" class="section">
-    <h2 class="section-title">Warum Mobbing falsch ist</h2>
-    <p class="section-text">
-      Hate zerstört Selbstvertrauen, verletzt Menschen und kann dauerhaft Schaden anrichten.
-      Jeder Mensch hat Respekt verdient – egal wer er ist.
+<section id="info" class="section">
+  <h2 class="section-title glow-big">Warum Mobbing zerstört</h2>
+  <p class="section-text large">
+    Über 40% der Jugendlichen erleben Mobbing online oder offline. Es senkt das Selbstwertgefühl, verursacht Depressionen, Angstzustände und kann langfristige Schäden hinterlassen.
+    Jeder Mensch hat ein Recht auf Sicherheit, Respekt und Unterstützung.
+  </p>
+  <ul class="info-list">
+    <li><strong>Psychische Folgen:</strong> Angst, Depression, Rückzug, Selbstzweifel.</li>
+    <li><strong>Körperliche Folgen:</strong> Schlafstörungen, Stresssymptome, psychosomatische Beschwerden.</li>
+    <li><strong>Soziale Folgen:</strong> Isolation, Konflikte in der Schule/Arbeit, Vertrauensverlust.</li>
+  </ul>
+</section>
+
+<section id="testimony" class="section accent">
+  <div class="card">
+    <h2 class="section-title glow-small">Meine persönliche Erfahrung</h2>
+    <p class="section-text large">
+      Ich wurde körperlich und verbal attackiert. Es ist niemals akzeptabel, jemanden zu schlagen, zu bedrohen oder bloßzustellen.
+      Diese Seite hilft, Erfahrungen zu teilen, sich zu schützen, und zeigt Wege, wie man Hilfe bekommt.
     </p>
-  </section>
-
-  <!-- NEUER BEREICH: Persönliche Erfahrung / Vorfall -->
-  <section id="testimony" class="section accent">
-    <div class="card">
-      <h2 class="section-title small">Meine Erfahrung</h2>
-      <p class="section-text">
-        Es ist nicht fair, dass <strong>Minu</strong> mich getreten und geschlagen hat. 
-        Körperliche Gewalt ist niemals akzeptabel. Diese Seite sammelt Informationen, bietet Unterstützung und zeigt Wege, wie man sich wehren oder Hilfe holen kann.
-      </p>
-
-      <ul class="support-list">
-        <li><strong>Dokumentiere</strong> Datum, Uhrzeit und Beweise (Screenshots, Zeug*innen, Videos).</li>
-        <li><strong>Melde</strong> den Vorfall an die Plattformmoderation oder bei Bedarf an die Polizei.</li>
-        <li><strong>Sprich</strong> mit Vertrauenspersonen oder Beratungsstellen – du bist nicht allein.</li>
-      </ul>
-
-      <div class="actions">
-        <button class="btn-outline" onclick="openReportModal()">Vorfall melden</button>
-        <button class="btn" onclick="scrollToSection('#help')">Hilfe & Ressourcen</button>
-      </div>
-    </div>
-  </section>
-
-  <section id="help" class="section dark">
-    <h2 class="section-title glow-small">Hilfe & Ressourcen</h2>
-    <p class="section-text">
-      Wenn du körperlich angegriffen wurdest, suche sofort sichere Hilfe. Bei akuter Gefahr rufe die Notrufnummern.
-      Für Online-Mobbing nutze die Meldefunktionen der Plattform und sichere Beweise.
-    </p>
-
-    <div class="resource-grid">
-      <div class="resource">
-        <h3>Sichern</h3>
-        <p>Screenshots, Chatlogs, Zeug*innen notieren.</p>
-      </div>
-      <div class="resource">
-        <h3>Melden</h3>
-        <p>Plattform-Support oder, bei körperlicher Gewalt, die Polizei informieren.</p>
-      </div>
-      <div class="resource">
-        <h3>Reden</h3>
-        <p>Vertraute, Vertrauenspersonen, Beratungsstellen kontaktieren.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>Gemeinsam sind wir stärker. ❤️ — Stop Hate</p>
-  </footer>
-
-  <!-- Modal für Meldung -->
-  <div id="reportModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeReportModal()">✕</button>
-      <h3>Vorfall melden</h3>
-      <p>Fülle die Felder aus, sichere Beweise und kontaktiere die zuständige Stelle.</p>
-
-      <label for="repName">Dein Name (oder Anonym)</label>
-      <input id="repName" class="field" placeholder="Name / Anonym">
-
-      <label for="repDate">Datum</label>
-      <input id="repDate" type="date" class="field">
-
-      <label for="repDesc">Kurze Schilderung</label>
-      <textarea id="repDesc" class="field" placeholder="Was ist passiert?"></textarea>
-
-      <div style="display:flex; gap:8px; margin-top:12px;">
-        <button class="btn" onclick="submitReport()">Report absenden (als Text kopieren)</button>
-        <button class="btn-outline" onclick="closeReportModal()">Abbrechen</button>
-      </div>
+    <ul class="support-list">
+      <li><strong>Dokumentieren:</strong> Datum, Uhrzeit, Ort, Beweise sammeln (Screenshots, Zeug*innen, Videos).</li>
+      <li><strong>Melden:</strong> Plattformmoderation, Schule/Arbeit oder Polizei einschalten.</li>
+      <li><strong>Reden:</strong> Vertrauenspersonen, Beratungsstellen, Therapeut*innen kontaktieren.</li>
+      <li><strong>Selbstschutz:</strong> Sichere Räume aufsuchen, Notfallkontakte bereit haben, klare Grenzen setzen.</li>
+      <li><strong>Online-Schutz:</strong> Accounts sichern, Privatsphäre-Einstellungen prüfen, Cybermobbing melden.</li>
+    </ul>
+    <div class="actions">
+      <button class="btn-outline" onclick="openReportModal()">Vorfall melden</button>
+      <button class="btn" onclick="scrollToSection('#help')">Hilfe & Ressourcen</button>
     </div>
   </div>
+</section>
 
-  <script src="script.js"></script>
+<section id="help" class="section dark">
+  <h2 class="section-title glow-big">Hilfe & Ressourcen</h2>
+  <p class="section-text large">
+    Sofort handeln bei akuter Gefahr: Notrufnummern anrufen, sichere Umgebung aufsuchen. Für Online-Mobbing: Screenshots sichern, Meldefunktionen der Plattform nutzen.
+  </p>
+  <div class="resource-grid">
+    <div class="resource">
+      <h3>Sichern</h3>
+      <p>Alle Beweise sammeln: Chatlogs, Screenshots, Videos, Zeug*innen notieren.</p>
+    </div>
+    <div class="resource">
+      <h3>Melden</h3>
+      <p>Plattform-Support, Schule/Arbeit oder Polizei informieren, je nach Schwere.</p>
+    </div>
+    <div class="resource">
+      <h3>Reden</h3>
+      <p>Vertraute Personen, Beratungsstellen, professionelle Hilfe kontaktieren.</p>
+    </div>
+    <div class="resource">
+      <h3>Selbsthilfe</h3>
+      <p>Atemübungen, Sport, Journaling, positive Online-Communities nutzen.</p>
+    </div>
+    <div class="resource">
+      <h3>Langfristige Hilfe</h3>
+      <p>Therapie, Anti-Mobbing-Programme, Peer-Gruppen und Workshops besuchen.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Gemeinsam sind wir stärker. ❤️ — Stop Hate</p>
+</footer>
+
+<!-- REPORT MODAL -->
+<div id="reportModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeReportModal()">✕</button>
+    <h3>Vorfall melden</h3>
+    <p>Fülle die Felder aus, sichere Beweise und kontaktiere die zuständige Stelle.</p>
+
+    <label for="repName">Dein Name (oder Anonym)</label>
+    <input id="repName" class="field" placeholder="Name / Anonym">
+
+    <label for="repDate">Datum</label>
+    <input id="repDate" type="date" class="field">
+
+    <label for="repDesc">Kurze Schilderung</label>
+    <textarea id="repDesc" class="field" placeholder="Was ist passiert?"></textarea>
+
+    <div style="display:flex; gap:8px; margin-top:12px;">
+      <button class="btn" onclick="submitReport()">Report absenden</button>
+      <button class="btn-outline" onclick="closeReportModal()">Abbrechen</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
 
